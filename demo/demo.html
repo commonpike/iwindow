@@ -1,0 +1,38 @@
+<html>	
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="../iwindow.js"></script>
+		<title>iWindow Demo</title>
+		<link rel="stylesheet" type="text/css" href="../iwindow.css">
+		<style type="text/css">
+			body { font-family:sans-serif; }
+			
+		</style>
+		<script>
+			function someScript(somedata) {
+				alert("some page called me saying "+somedata);
+			}
+			function someOtherScript(somedata) {
+				alert("some other page called me saying "+somedata);
+			}
+		</script>
+	</head>
+	<body>
+	
+		<h1>iWindow Demo</h1>
+		<p>
+			iWindow ('iFrame Window') provides an virtual window object
+			which is actually an iframe. On mobile, it appears fullscreen.
+			On desktop, it looks like a popup.
+		</p>
+		<p>
+			XFrame requires jQuery. In some browsers, it
+			can not run on local filesystem due to security restrictions.
+		</p>
+		<form onsubmit="return false">
+			<button onclick="iWindow.open('Page One', 'page1.html')">open page 1</button>
+			<button onclick="iWindow.open('Page Two', 'page2.html')">open page 2</button><br>
+			
+		</form>
+	</body>
+</html>
