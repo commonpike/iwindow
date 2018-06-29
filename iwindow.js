@@ -23,9 +23,9 @@ var iWindow = {
 
 	init	: function() {
 		var $ = jQuery;
-		$('head').append('<style type="text/css" id="iwindow-css">'+this.config.css+'</style>');	
-		$('body').append('<div id="iwindow-backdrop"></div>');
-		$('body').append('<div id="iwindow"><header><div id="iwindow-close"></div><div id="iwindow-title"></div></header><iframe></iframe></div>');	
+		if (this.config.css) $('head').append('<style type="text/css" id="iwindow-css">'+this.config.css+'</style>');	
+		$('body').append('<div id="iwindow-backdrop" class="iwindow-backdrop"></div>');
+		$('body').append('<div id="iwindow" class="iwindow-chrome"><header  class="iwindow-header"><div id="iwindow-close"></div><div id="iwindow-title"></div></header><section class="iwindow-body"><iframe></iframe></section></div>');	
 		$('#iwindow-backdrop,#iwindow-close').on('click',function() { iWindow.hide(); });
 		this.$backdrop 	= $('#iwindow-backdrop');
 		this.$iwindow 	= $('#iwindow');
@@ -44,7 +44,9 @@ var iWindow = {
 		}
 	},
 	
-	
+	close	: function() {
+		this.hide();
+	},
 	
 	show			: function() {
 		this.$backdrop.show();

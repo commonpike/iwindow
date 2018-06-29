@@ -1,3 +1,15 @@
+.iwindow-backdrop {
+	background-color:black;
+	opacity:.25;
+}
+.iwindow-header {
+	background-color:#eee; 
+}
+.iwindow-chrome {
+	border:4px solid #eee; 	
+	background-color:white;
+}
+
 
 #iwindow-backdrop {
 	display:none;
@@ -5,17 +17,14 @@
 	position:fixed;
 	top:0; height:100%;
 	left:0; width:100%;
-	background-color:black;
-	opacity:.25;
+
 }
 
 #iwindow 					{ 
 	position:fixed;
 	top:0; height:100%;
 	left:0; width:100%;
-	border:4px solid #eee; 	
 	border-top:0;
-	background-color:white;
 	box-sizing:border-box;
 }
 
@@ -24,10 +33,11 @@
 }
 
 	#iwindow header 	{ 
-		height:1em; padding:.5em 0 .5em .5em; 
-		background-color:#eee; 
+		height:30px;
+		line-height:30px;
+		padding-left:.5em; 
 		font-size:small;
-		line-height:1em;
+		
 	}
 	#iwindow-title 	{ 
 		text-transform:uppercase;
@@ -35,11 +45,19 @@
 	}
 	
 	#iwindow-close 		{ 
+		width:30px;
+		height:30px;
+		text-align:center;
 		cursor:pointer;
 		float:right; 
 	}
 	#iwindow-close:before {
 		content:"\00274C";
+	}
+	#iwindow section {
+		position:absolute;
+		top:30px; bottom:0;
+		left:0 ; right:0;
 	}
 	#iwindow iframe		{ 
 		width:100%; height:100%; 
